@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        @font-face {
+            font-family: BitxMap;
+            src: url('public/BitxMapFonttfb.ttf');
+        }
+
+        @font-face {
+            font-family: monument;
+            src: url('public/MonumentExtended-Regular.otf');
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .icon {
+            height: 1.8vw;
+            width: 1.8vw;
+        }
+
+        .navbar {
+            border: 1px solid black;
+            display: flex;
+            font-family: BitxMap;
+            gap: 3vw;
+            align-items: center;
+            padding: 0.5vw 0.8vw 0.5vw 0.8vw;
+            margin-top: 1.7vw;
+            margin-left: 2vw;
+            width: max-content;
+        }
+
+        .welcomeNav {
+            margin-left: 12vw;
+        }
+
+        .nameDiv {
+            display: flex;
+            /* flex-direction: column; */
+            gap: 0.8vw;
+        }
+
+        .square {
+            height: 2.8vw;
+            width: 2.8vw;
+            background-color: black;
+        }
+
+        .name {
+            font-family: monument;
+            font-size: 1.2vw;
+        }
+
+        /* .intro {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        } */
+
+        #country {
+            font-family: BitxMap;
+            font-size: 1vw;
+        }
+        .introWel{
+            display: flex;
+            margin-left: 2vw;
+            margin-top: 4vw;
+            justify-content: space-between;
+        }
+        .welcText{
+            font-family: BitxMap;
+            font-size: 1.2vw;
+            margin-right: 2.5vw;
+        }
+        .welc1{
+            margin-left: 4.9vw;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="navbar">
+        <svg class="icon" id="cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 27">
+            <rect id="topLeft" width="9" height="9" fill="currentColor"></rect>
+            <rect id="bottomLeft" y="18" width="9" height="9" fill="currentColor"> </rect>
+            <rect id="topRight" x="18" width="9" height="9" fill="currentColor"></rect>
+            <rect id="center" x="9" y="9" width="9" height="9" fill="currentColor"></rect>
+        </svg>
+        <a class="welcomeNav">WELCOME</a>
+        <a>ABOUT</a>
+        <a>PROJECTS</a>
+        <a>CONTACT</a>
+    </div>
+    <div class="introWel">
+        <div class="nameDiv">
+            <div class="square"></div>
+            <div class="intro">
+                <p class="name">PRISHA SETHOGI</p>
+                <p id="country"></p>
+            </div>
+        </div>
+
+        <div class="welcomePort">
+            <p class="welcText welc1">WELCOME TO</p>
+            <p class="welcText">MY PORTFOLIO 2024</p>
+        </div>
+    </div>
+    <script type="text/javascript">
+        setInterval(function () {
+
+            const d = new Date();
+            var hours = d.getHours();
+            var ampm = "AM";
+            if (hours >= 12) {
+                hours -= 12;
+                ampm = "PM";
+            }
+            else if (hours == 0) {
+                hours = 12;
+            }
+
+            hours = hours.toString();
+            var mins = d.getMinutes().toString();
+            if (hours.length < 2) {
+                hours = '0' + hours;
+            }
+            if (mins.length < 2) {
+                mins = '0' + mins;
+            }
+
+
+
+            var time = hours + ':' + mins;
+
+            document.getElementById("country").innerHTML = "BASED IN INDIA [" + time + " " + ampm + "]"
+        }, 1000)
+
+    </script>
+</body>
+
+</html>
